@@ -35,15 +35,54 @@
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-heading);
 
   --radius: 0.375rem;
+
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-sidebar-border: var(--sidebar-border);
+
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+
+  --color-sidebar-accent: var(--sidebar-accent);
+
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+
+  --color-sidebar-primary: var(--sidebar-primary);
+
+  --color-sidebar-foreground: var(--sidebar-foreground);
+
+  --color-sidebar: var(--sidebar);
+
+  --color-chart-5: var(--chart-5);
+
+  --color-chart-4: var(--chart-4);
+
+  --color-chart-3: var(--chart-3);
+
+  --color-chart-2: var(--chart-2);
+
+  --color-chart-1: var(--chart-1);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+
+  --radius-md: calc(var(--radius) * 0.8);
+
+  --radius-lg: var(--radius);
+
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  --radius-2xl: calc(var(--radius) * 1.8);
+
+  --radius-3xl: calc(var(--radius) * 2.2);
+
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 /* ====================== Precision Architect Design System ====================== */
 :root {
-  /* Base Canvas */
-  --background: oklch(0.985 0.005 240); /* #f8f9ff - Exact match */
+  /* Base Canvas */ /* #f8f9ff - Exact match */
 
   /* Tonal Surface Hierarchy - Corrected to match your hex values */
   --surface-container-low: oklch(0.965 0.01 240); /* Very close to #eff4ff */
@@ -52,33 +91,51 @@
   --surface-container-highest: oklch(
     0.925 0.01 240
   ); /* Lighter - Level 2 Active Content */
-  --surface-container-lowest: oklch(1 0 0); /* Pure white */
-
-  --foreground: oklch(0.22 0.02 240); /* #00345e */
+  --surface-container-lowest: oklch(1 0 0); /* Pure white */ /* #00345e */
   --on-surface-variant: oklch(0.45 0.08 240); /* #26619d */
 
   /* Primary Blue */
-  --primary: oklch(0.488 0.243 264.376); /* ≈ #0053db */
+  --primary: oklch(0.52 0.105 223.128); /* ≈ #0053db */
   --primary-dim: oklch(0.42 0.22 264); /* ≈ #0048c1 */
-  --primary-foreground: oklch(0.97 0.014 254.604);
+  --primary-foreground: oklch(0.984 0.019 200.873);
 
   --surface-bright: oklch(0.98 0.005 240); /* Hover lift for rows */
 
-  --secondary: oklch(0.96 0.005 240);
-  --secondary-foreground: oklch(0.25 0.02 240);
-  --muted: oklch(0.96 0.005 240);
-  --muted-foreground: oklch(0.55 0.02 240);
-  --accent: oklch(0.96 0.005 240);
-  --accent-foreground: oklch(0.25 0.02 240);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.52 0.105 223.128);
+  --accent-foreground: oklch(0.984 0.019 200.873);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.008 240);
-  --input: oklch(0.97 0.008 240);
-  --ring: var(--primary);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --chart-1: oklch(0.809 0.105 251.813);
+  --chart-2: oklch(0.623 0.214 259.815);
+  --chart-3: oklch(0.546 0.245 262.881);
+  --chart-4: oklch(0.488 0.243 264.376);
+  --chart-5: oklch(0.424 0.199 265.638);
+  --radius: 0.875rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.609 0.126 221.723);
+  --sidebar-primary-foreground: oklch(0.984 0.019 200.873);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 /* Dark Mode */
 .dark {
-  --background: oklch(0.135 0.012 240); /* Closer to #000f21 */
+  --background: oklch(0.145 0 0); /* Closer to #000f21 */
 
   --surface-container-low: oklch(0.19 0.01 240);
   --surface-container: oklch(0.23 0.01 240);
@@ -86,25 +143,43 @@
   --surface-container-highest: oklch(0.32 0.01 240);
   --surface-container-lowest: oklch(0.38 0.01 240);
 
-  --foreground: oklch(0.93 0.02 235); /* Cooler tone, closer to surface_dim */
+  --foreground: oklch(0.985 0 0); /* Cooler tone, closer to surface_dim */
   --on-surface-variant: oklch(0.73 0.03 235);
 
-  --primary: oklch(0.58 0.22 264);
+  --primary: oklch(0.45 0.085 224.283);
   --primary-dim: oklch(0.52 0.2 264);
-  --primary-foreground: oklch(0.97 0.014 254.604);
+  --primary-foreground: oklch(0.984 0.019 200.873);
 
   --surface-bright: oklch(0.29 0.01 240);
 
-  --secondary: oklch(0.25 0.01 240);
-  --secondary-foreground: oklch(0.92 0.01 240);
-  --muted: oklch(0.25 0.01 240);
-  --muted-foreground: oklch(0.65 0.02 240);
-  --accent: oklch(0.25 0.01 240);
-  --accent-foreground: oklch(0.92 0.01 240);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.45 0.085 224.283);
+  --accent-foreground: oklch(0.984 0.019 200.873);
 
-  --border: oklch(1 0 0 / 0.12);
-  --input: oklch(1 0 0 / 0.15);
-  --ring: var(--primary);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --chart-1: oklch(0.809 0.105 251.813);
+  --chart-2: oklch(0.623 0.214 259.815);
+  --chart-3: oklch(0.546 0.245 262.881);
+  --chart-4: oklch(0.488 0.243 264.376);
+  --chart-5: oklch(0.424 0.199 265.638);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.715 0.143 215.221);
+  --sidebar-primary-foreground: oklch(0.302 0.056 229.695);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
 }
 
 /* ====================== Utilities ====================== */
