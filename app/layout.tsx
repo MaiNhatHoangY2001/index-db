@@ -1,13 +1,14 @@
-import AppSidebar from "@/components/layout/AppSidebar";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import LeftSidebar from "@/components/layout/LeftSidebar";
+import RightSidebar from "@/components/layout/RightSidebar";
 import { cn } from "@/lib/utils";
+import { Database } from "lucide-react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
-const geistHeading = Geist({subsets:['latin'],variable:'--font-heading'});
+const geistHeading = Geist({ subsets: ["latin"], variable: "--font-heading" });
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,20 +34,36 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-              "h-full",
-              "antialiased",
-              geistSans.variable,
-              geistMono.variable,
-            , "font-sans", inter.variable, geistHeading.variable)}
+        "h-full",
+        "antialiased",
+        geistSans.variable,
+        geistMono.variable,
+        "font-sans",
+        inter.variable,
+        geistHeading.variable,
+      )}
     >
       <body className="min-h-full flex flex-col">
-        <SidebarProvider>
-          <AppSidebar />
-          <main>
-            <SidebarTrigger />
-            {children}
-          </main>
-        </SidebarProvider>
+        <div className="h-screen flex flex-col bg-secondary">
+          <header className="h-14 border-b flex items-center justify-between px-6 font-semibold bg-background">
+            <div className="flex gap-4">
+              <Database />
+              <span className="font-semibold text-lg text-foreground">
+                Clean DB Manager
+              </span>
+            </div>
+            <span className="font-semibold text-xs text-muted-foreground">
+              v1.0.4
+            </span>
+          </header>
+          <div className="flex flex-1 gap-6 overflow-hidden p-6">
+            <LeftSidebar />
+            <main className="flex-1 p-6 overflow-y-auto bg-background border rounded-sm">
+              {children}
+            </main>
+            <RightSidebar />
+          </div>
+        </div>
       </body>
     </html>
   );
